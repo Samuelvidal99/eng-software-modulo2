@@ -1,0 +1,11 @@
+Módulo 2:
+Nome: Gerenciador de imóveis e aluguéis
+Descrição: Neste módulo ela deseja conseguir os aluguéis dos imóveis que ela possui. Ela
+precisa ter os dados dos inquilinos, o valor de cada aluguél, o contrato que foi assinado, as
+informações de cada imóvel, como número da inscrição na prefeitura, número do contrato com
+a companhia de energia, etc. Ela também deseja ser notificada por e-mail semanalmente com
+informações sobre inadimplência, os boletos para pagamento do aluguel deve ser gerado
+automaticamente no dia registrado no contrato e enviado por e-mail para o inquilino
+correspondente. Ela também quer alguns relatório com gráfico e também quer que seja possível
+exportar esses dados em formato CSV para que ela possa usar na declaração do imposto de
+renda.

@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.formlogin{
+    background-color: rgb(234, 241, 239);
+    color: #fff;
+    padding: 40px;
+    border: 1px solid #000;
+    box-shadow: 3px 3px #000;
+    border-radius: 20px;
+}
+/*h4{
+    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}*/
+
+h2, h4{
+    font-size: 50px;
+    background: -webkit-linear-gradient(#90EE90, #2E8B57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-adjust: transparent;
+    filter: drop-shadow(2px 2px #333)
+}
+h4{
+    font-size: 30px;
+    background: -webkit-linear-gradient(#90EE90, #2E8B57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-adjust: transparent;
+    filter: drop-shadow(2px 2px #333)
+}
