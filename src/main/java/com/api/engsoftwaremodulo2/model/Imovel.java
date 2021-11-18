@@ -2,12 +2,12 @@ package com.api.engsoftwaremodulo2.model;
 
 import com.api.engsoftwaremodulo2.exception.CepInvalidoException;
 import com.api.engsoftwaremodulo2.exception.ValorCondominioInvalidoException;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Getter
-@Setter
+@Document
+@Data
 public class Imovel {
 
     @Id
