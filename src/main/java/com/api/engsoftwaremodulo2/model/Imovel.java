@@ -1,6 +1,7 @@
 package com.api.engsoftwaremodulo2.model;
 
 import com.api.engsoftwaremodulo2.exception.CepInvalidoException;
+import com.api.engsoftwaremodulo2.exception.ValorCondominioInvalidoException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -22,7 +23,7 @@ public class Imovel {
         this.cidade = cidade;
         this.logradouro = logradouro;
         this.setCep(cep);
-        this.valorCondominio = valorCondominio;
+        this.setValorCondominio(valorCondominio);
     }
 
     /**
@@ -51,5 +52,12 @@ public class Imovel {
             throw new CepInvalidoException("Não é possível atribuir um cep inválido a um imóvel.\nCEP: " + this.cep);
 
         this.cep = cep;
+    }
+
+    public void setValorCondominio(double valorCondominio) {
+        if (valorCondominio <= 0)
+            throw new ValorCondominioInvalidoException("Valor de condomínio inválido.\nVALOR: " + this.valorCondominio);
+
+        this.valorCondominio = valorCondominio;
     }
 }
