@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 @Data
+@SuppressWarnings("unused")
 public class Imovel {
 
     @Id
@@ -25,9 +26,9 @@ public class Imovel {
         this.setCep(cep);
         this.setValorCondominio(valorCondominio);
     }
-    
-    
-    
+
+
+
     public String getId() {
 		return id;
 	}
