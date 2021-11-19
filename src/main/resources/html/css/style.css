@@ -33,6 +33,13 @@ h4{
     -webkit-text-fill-adjust: transparent;
     filter: drop-shadow(2px 2px #333)
 }
+/*h1{
+    font-size: 50px;
+    background: -webkit-linear-gradient(#90EE90, #2E8B57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-adjust: transparent;
+    filter: drop-shadow(2px 2px #333)
+}*/
 #contratos{
     background-color:white;
     color:gray;
