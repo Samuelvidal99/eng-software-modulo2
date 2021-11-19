@@ -33,3 +33,11 @@ h4{
     -webkit-text-fill-adjust: transparent;
     filter: drop-shadow(2px 2px #333)
 }
+#contratos{
+    background-color:white;
+    color:gray;
+    border-radius:0%;
+    width:200px;
+    margin:auto;
+    border-color: black;
+}
