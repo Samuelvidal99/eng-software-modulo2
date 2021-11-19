@@ -40,4 +40,12 @@ h4{
     width:200px;
     margin:auto;
     border-color: black;
+    height: 35px;
+}
+#imagem-contrato{
+    color:black;
+    margin:auto;
+    position:absolute;
+    margin-left: -137px;
+    margin-top: 3px;
 }
