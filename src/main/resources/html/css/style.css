@@ -42,6 +42,9 @@ h4{
     border-color: black;
     height: 35px;
 }
+#contratos:hover{
+    border-color: rgb(127, 161, 255);
+}
 #imagem-contrato{
     color:black;
     margin:auto;
