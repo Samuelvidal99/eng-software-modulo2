@@ -25,8 +25,42 @@ public class Imovel {
         this.setCep(cep);
         this.setValorCondominio(valorCondominio);
     }
+    
+    
+    
+    public String getId() {
+		return id;
+	}
 
-    /**
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public double getValorCondominio() {
+		return valorCondominio;
+	}
+
+	/**
      * Método checa se o cep é válido. Um cep válido contém 8 números e nada mais.
      * @param cep Uma string contendo o cep a ser validado.
      * @return true(válido), false(inválido)
