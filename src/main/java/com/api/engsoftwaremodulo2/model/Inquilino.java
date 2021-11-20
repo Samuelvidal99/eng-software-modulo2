@@ -1,5 +1,9 @@
 package com.api.engsoftwaremodulo2.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,10 +16,15 @@ public class Inquilino {
 	
 	@Id
 	private String id;
+	@NotBlank(message = "O campo nome é obrigatório")
 	private String nome;
+	@CPF(message = "Digite um CPF válido")
 	private String cpf;
+	@NotBlank(message = "O campo RG é obrigatório")
 	private String rg;
+	@NotBlank(message = "O campo telefone é obrigatório")
 	private String telefone;
+	@Email(message = "Digite um Email valido")
 	private String email;
 	
 	public Inquilino() {}
