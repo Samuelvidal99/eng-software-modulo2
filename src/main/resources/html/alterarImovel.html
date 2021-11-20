@@ -57,7 +57,7 @@
                         <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
                         <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
                       </svg>   -->
-                      <select class="form-control" id="contratos" style="text-align: center;width: 250px;">
+                      <select class="form-control" id="contratos" autofocus onchange="teste()" style="text-align: center;width: 250px;">
                         <option>Selecione um Imóvel</option>
                         <option>Imóvel 01</option>
                         <option>Imóvel 02</option>
@@ -67,22 +67,22 @@
                 </div>
                   <div class="form-group text-center">
                       <p>
-                          <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe uma cidade"/>
+                          <input type="text" id="cidadeField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe uma cidade"/>
                       </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um logradouro"/>
+                        <input type="text" id="logradouroField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um logradouro"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um CEP"/>
+                        <input type="text" id="cepField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um CEP"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do condomínio"/>
+                        <input type="text" id="condominioField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do condomínio"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
@@ -112,6 +112,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- JS do Preloader -->
     <script src="javascript/preloader.js"></script>
+    <script src="javascript/imovel.js"></script>
     
   </body>
 </html>
