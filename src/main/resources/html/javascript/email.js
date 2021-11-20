@@ -1,9 +1,11 @@
 
-const email = document.getElementById("cadastrarEmailField")
+
 
 
 function enviarEmail(){
 
+  const email = document.getElementById("cadastrarEmailField")
+  
     fetch("localhost:8080/email", {
         method: "POST",
         headers: {
