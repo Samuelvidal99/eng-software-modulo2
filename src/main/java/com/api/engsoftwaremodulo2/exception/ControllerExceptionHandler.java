@@ -21,5 +21,11 @@ public class ControllerExceptionHandler {
         StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), "Não encontrado", e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
-    
+
+    @ExceptionHandler(AlreadyExistsInDatabaseException.class)
+    public ResponseEntity<StandardError> alreadyExistsInDatabase(AlreadyExistsInDatabaseException e, HttpServletRequest request) {
+        StandardError err = new StandardError(System.currentTimeMillis(), HttpStatus.CONFLICT.value(), "Restrição de integridade de dados", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(err);
+    }
+
 }
