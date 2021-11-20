@@ -24,11 +24,7 @@ public class ImovelController {
         if (bindingResult.hasErrors())
             throw new ConstraintException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        try {
-            Imovel novoImovel = this.imovelService.criar(imovel);
-            return ResponseEntity.ok().body(novoImovel);
-        } catch (CepInvalidoException ex) {
-            throw new ConstraintException(ex.getMessage());
-        }
+        Imovel novoImovel = this.imovelService.criar(imovel);
+        return ResponseEntity.ok().body(novoImovel);
     }
 }
