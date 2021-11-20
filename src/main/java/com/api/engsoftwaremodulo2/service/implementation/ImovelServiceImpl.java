@@ -1,10 +1,13 @@
 package com.api.engsoftwaremodulo2.service.implementation;
 
+import com.api.engsoftwaremodulo2.exception.ObjectNotFoundException;
 import com.api.engsoftwaremodulo2.model.Imovel;
 import com.api.engsoftwaremodulo2.repository.ImovelRepository;
 import com.api.engsoftwaremodulo2.service.ImovelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ImovelServiceImpl implements ImovelService {
@@ -15,5 +18,28 @@ public class ImovelServiceImpl implements ImovelService {
     @Override
     public Imovel criar(Imovel imovel) {
         return imovelRepository.save(imovel);
+    }
+
+    @Override
+    public List<Imovel> obterTodos() {
+        return this.imovelRepository.findAll();
+    }
+
+    @Override
+    public Imovel obterPorId(String id) {
+        return this.imovelRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("Imóvel não existe no banco"));
+    }
+
+    @Override
+    public void deletar(String id) {
+        if (this.imovelRepository.existsById(id)) this.imovelRepository.deleteById(id);
+        else throw new ObjectNotFoundException("Imóvel não existe no banco, não é possível deletar");
+    }
+
+    @Override
+    public Imovel atualizar(Imovel imovel) {
+        if (this.imovelRepository.existsById(imovel.getId())) return this.imovelRepository.save(imovel);
+        else throw new ObjectNotFoundException("Imóvel não existe no banco, não é possível atualizar entidade");
     }
 }
