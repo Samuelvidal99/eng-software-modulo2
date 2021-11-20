@@ -1,5 +1,5 @@
 
-function teste() {
+function preencherCampos() {
     var imovel = document.getElementById("contratos").value
 
     cidade = document.getElementById("cidadeField")
