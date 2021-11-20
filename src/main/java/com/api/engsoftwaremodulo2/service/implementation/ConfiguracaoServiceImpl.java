@@ -17,7 +17,7 @@ public class ConfiguracaoServiceImpl implements ConfiguracaoService {
 
     @SuppressWarnings("unchecked")
     @Override
-    public String cadastrarEmail(String email) {
+    public String cadastrar(String email) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             Map<String, String> map = mapper.readValue(
@@ -27,7 +27,7 @@ public class ConfiguracaoServiceImpl implements ConfiguracaoService {
             mapper.writeValue(Paths.get("src/main/resources/META-INF/user-configuration.json").toFile(), map);
             return email;
         } catch (IOException e) {
-            throw new RuntimeException("Não foi possível cadastrar o email, houveram problemas de IO", e);
+            throw new RuntimeException("Não foi possível modificar o email, houveram problemas de IO", e);
         }
     }
 }

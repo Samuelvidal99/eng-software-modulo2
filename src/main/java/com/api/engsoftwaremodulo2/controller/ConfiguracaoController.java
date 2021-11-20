@@ -18,7 +18,11 @@ public class ConfiguracaoController {
 
     @PostMapping("/email/cadastrar")
     public ResponseEntity<String> cadastrar(@RequestParam("email") @Email String email) {
-        return ResponseEntity.ok().body(confService.cadastrarEmail(email));
+        return ResponseEntity.ok().body(confService.cadastrar(email));
     }
 
+    @PutMapping("/email/alterar")
+    public ResponseEntity<String> alterar(@RequestParam("email") @Email String email) {
+        return ResponseEntity.ok().body(confService.cadastrar(email));
+    }
 }
