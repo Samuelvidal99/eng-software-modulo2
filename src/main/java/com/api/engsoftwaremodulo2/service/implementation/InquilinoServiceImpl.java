@@ -19,7 +19,7 @@ public class InquilinoServiceImpl implements InquilinoService {
 	@Override
 	public Inquilino criar(Inquilino inquilino) {
 		
-		return inquilinoRepository.save(inquilino);
+		return this.inquilinoRepository.save(inquilino);
 	}
 
 	@Override
@@ -35,9 +35,7 @@ public class InquilinoServiceImpl implements InquilinoService {
 	@Override
 	public void deletar(String codigo) {
 		obterPorCodigo(codigo);
-		this.inquilinoRepository.deleteById(codigo);
-
-		
+		this.inquilinoRepository.deleteById(codigo);	
 	}
 
 	@Override

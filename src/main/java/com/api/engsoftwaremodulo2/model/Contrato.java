@@ -2,9 +2,14 @@ package com.api.engsoftwaremodulo2.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -19,13 +24,31 @@ public class Contrato {
 	private Imovel imovel;
 	@DBRef
 	private Inquilino inquilino;
+	
+	@NotBlank(message = "O campo Número do Contrato é obrigatório")
 	private int num_contrato;
+	
+	@NotNull(message = "O campo Valor do Aluguel é obrigatório")
 	private double valor_aluguel;
+	
+	@NotBlank(message = "O campo Contrato de Enérgia é obrigatório")
 	private String contrato_energia;
+	
+	@NotBlank(message = "O campo Contrato de Água é obrigatório")
 	private String contrato_agua;
+	
+	@DateTimeFormat
+	@NotNull(message = "O campo Data de Início é obrigatório")
 	private Date dataInicio;
+	
+	@DateTimeFormat
+	@NotNull(message = "O campo Data de Término é obrigatório")
 	private Date dataTermino;
+	
+	@Email
 	private String emailContratante;
+	
+	@NotNull(message = "O campo Pendente é obrigatório")
 	private boolean pendente;
 	
 	public Contrato() {}
