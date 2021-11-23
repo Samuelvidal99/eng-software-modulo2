@@ -13,6 +13,9 @@ import com.api.engsoftwaremodulo2.repository.ImovelRepository;
 import com.api.engsoftwaremodulo2.repository.InquilinoRepository;
 import com.api.engsoftwaremodulo2.service.ContratoService;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ContratoServiceImpl implements ContratoService{
 
 	@Autowired
@@ -25,7 +28,6 @@ public class ContratoServiceImpl implements ContratoService{
 	
 	@Override
 	public List<Contrato> obterTodos() {
-		
 		return this.contratoRepository.findAll();
 	}
 
