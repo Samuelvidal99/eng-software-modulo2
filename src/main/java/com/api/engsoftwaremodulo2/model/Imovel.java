@@ -19,7 +19,6 @@ import javax.validation.constraints.PositiveOrZero;
 public class Imovel {
 
     @Id
-    @Null
     private String id;
     @NotBlank(message = "O campo <cidade> é obrigatório")
     private String cidade;
