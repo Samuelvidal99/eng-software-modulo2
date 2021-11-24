@@ -24,7 +24,8 @@ public class ContratoServiceImpl implements ContratoService{
 	@Autowired
 	private ImovelRepository imovelRepository;
 	
-	@Autowired InquilinoRepository inquilinoRepository;
+	@Autowired 
+	private InquilinoRepository inquilinoRepository;
 	
 	@Override
 	public List<Contrato> obterTodos() {
@@ -39,7 +40,7 @@ public class ContratoServiceImpl implements ContratoService{
 	@Override
 	public Contrato criar(Contrato contrato) {
 		
-		if(contrato.getImovel() != null || contrato.getInquilino() != null)
+		if(contrato.getImovel() != null && contrato.getInquilino() != null)
 		{
 			Imovel imovel = this.imovelRepository.findById(contrato.getImovel().getId())
 					.orElseThrow(() -> new ObjectNotFoundException("Imóvel não Existe"));
