@@ -25,7 +25,7 @@ public class Contrato {
 	@DBRef
 	private Inquilino inquilino;
 	
-	@NotBlank(message = "O campo Número do Contrato é obrigatório")
+	@NotNull(message = "O campo Número do Contrato é obrigatório")
 	private int num_contrato;
 	
 	@NotNull(message = "O campo Valor do Aluguel é obrigatório")

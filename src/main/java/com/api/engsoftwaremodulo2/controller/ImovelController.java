@@ -36,7 +36,7 @@ public class ImovelController {
         return ResponseEntity.ok(imoveis);
     }
 
-    @PostMapping("/criar")
+    @PostMapping("/new")
     public ResponseEntity<Imovel> criar(@Valid @RequestBody Imovel imovel, BindingResult bindingResult) {
         this.checkBindingResultForErrors(bindingResult);
 
@@ -44,7 +44,7 @@ public class ImovelController {
         return ResponseEntity.ok().body(novoImovel);
     }
 
-    @PutMapping("/alterar")
+    @PutMapping("/update")
     public ResponseEntity<Imovel> alterar(@Valid @RequestBody Imovel imovel, BindingResult bindingResult) {
         this.checkBindingResultForErrors(bindingResult);
 
@@ -52,7 +52,7 @@ public class ImovelController {
         return ResponseEntity.ok(updatedImovel);
     }
 
-    @DeleteMapping("deletar/{codigo}")
+    @DeleteMapping("delete/{codigo}")
     public ResponseEntity<?> deletar(@PathVariable
                                       @NotBlank(message = "codigo nao pode ser vazio") String codigo) {
         this.imovelService.deletar(codigo);
