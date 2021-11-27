@@ -66,8 +66,9 @@ function cadastrarImovel() {
         if (data.message == undefined) {
             console.log("Success: \n", data)
         } else {
-            console.log(data.message)
-            alertaError(data.message)
+            var string = data.message.replace('<', '')
+            console.log(string.replace('>', ''))
+            alertaError(string.replace('>', ''))
         }
     })
 }
