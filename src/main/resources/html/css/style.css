@@ -61,6 +61,16 @@ h4{
     margin-left: -137px;
     margin-top: 3px;
 }
+#alerta{
+    text-align: center;
+}
+#alerta button{
+    border: none;
+    background: none;
+}
+#spanAlert{
+    margin-left: 3px;
+}
 /*******************************************************************************************/
   /* ini: Preloader */
  

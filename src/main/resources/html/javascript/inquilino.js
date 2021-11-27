@@ -1,26 +1,48 @@
+function alertaError(message) {
+  var alerta = `
+  <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert">
+    <strong>${message}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  `
+  div = document.getElementById("div01")
+  $(div).append(alerta)
+}
+
 function cadastrarInquilino(){
 
-    const name = document.getElementById("nameField")
-    const cpf = document.getElementById("cpfField")
-    const rg = document.getElementById("rgField")
-    const cellphone = document.getElementById("cellphoneField")
-    const email = document.getElementById("emailField")
+    const name = document.getElementById("nameField").value
+    const cpf = document.getElementById("cpfField").value
+    const rg = document.getElementById("rgField").value
+    const cellphone = document.getElementById("cellphoneField").value
+    const email = document.getElementById("emailField").value
 
-      fetch("localhost:8080/email", {
+    var obj = new Object()
+    obj.nome = name
+    obj.cpf = cpf
+    obj.rg = rg
+    obj.telefone = cellphone
+    obj.email = email
+
+    var teste = JSON.stringify(obj)
+
+    console.log(teste)
+      fetch("http://localhost:8080/inquilino/new", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(name, cpf, rg, cellphone, email),
+          body: teste,
         })
           .then((response) => response.json())
-          .then((email) => {
-            console.log("Success:", email);
+          .then((data) => {
+            if (data.message == undefined) {
+              console.log("Success: \n", data);
+            }else {
+              console.log(data.message)
+              alertaError(data.message)
+            }
           })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-  
   }
-  
-  
