@@ -13,29 +13,49 @@ function alertaError(message) {
 }
 
 function preencherCampos() {
-    var imovel = document.getElementById("contratos").value
+    var imovel = document.getElementById("imoveis").value
 
     cidade = document.getElementById("cidadeField")
     logradouro = document.getElementById("logradouroField")
     cep = document.getElementById("cepField")
     condominio = document.getElementById("condominioField")
 
-    if(imovel == "Imóvel 01") {
-        cidade.value = "Cidade Imóvel 01"
-        logradouro.value = "Logradouro Imóvel 01"
-        cep.value = "CEP Imóvel 01"
-        condominio.value = "Condomínio Imóvel 01"
-    } else if (imovel == "Imóvel 02") {
-        cidade.value = "Cidade Imóvel 02"
-        logradouro.value = "Logradouro Imóvel 02"
-        cep.value = "CEP Imóvel 02"
-        condominio.value = "Condomínio Imóvel 02"
-    } else {
-        cidade.value = "Cidade Imóvel 03"
-        logradouro.value = "Logradouro Imóvel 03"
-        cep.value = "CEP Imóvel 03"
-        condominio.value = "Condomínio Imóvel 03"
+    if(imovel != "Selecione um Imóvel") {
+        var url = `http://localhost:8080/imovel/${imovel}`
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            cidade.value = data["cidade"]
+            logradouro.value = data["logradouro"]
+            cep.value = data["cep"]
+            condominio.value = data["valorCondominio"]
+        })
     }
+}
+
+// Falta a interação do banco não ter imoveis cadastrados
+function preencherSelect() {
+    var select = document.getElementById("imoveis")
+    console.log(select.options)
+    fetch("http://localhost:8080/imovel/", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        for(var i = 0; i < data.length; i++) {
+            var option = `<option value="${data[i]["id"]}">${data[i]["logradouro"]}</option>`
+            console.log(data[i]["id"])
+            $(select).append(option)
+        }
+    })
 }
 
 function cadastrarImovel() {
@@ -63,7 +83,7 @@ function cadastrarImovel() {
     })
     .then((response) => response.json())
     .then((data) => {
-        if (data.message == undefined) {
+        if(data.message == undefined) {
             console.log("Success: \n", data)
         } else {
             var string = data.message.replace('<', '')
@@ -71,4 +91,42 @@ function cadastrarImovel() {
             alertaError(string.replace('>', ''))
         }
     })
+}
+
+// ver como pegar o id da option
+function alterarImovel() {
+    var cidade = document.getElementById("cidadeField").value
+    var logradouro = document.getElementById("logradouroField").value
+    var cep = document.getElementById("cepField").value
+    var condominio = document.getElementById("condominioField").value
+    var imovel = document.getElementById("imoveis").value
+
+    var obj = new Object()
+    obj.id = imovel
+    obj.cidade = cidade
+    obj.logradouro = logradouro
+    obj.cep = cep
+    obj.valorCondominio = parseFloat(condominio) 
+
+    var body = JSON.stringify(obj)
+
+
+    if(imovel != "Selecione um Imóvel") {
+        fetch("http://localhost:8080/imovel/update", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: body,
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.message == undefined) {
+                console.log("Success: \n", data)
+            } else {
+                console.log(data.message)
+                alertaError(data.message)
+            }
+        })
+    }
 }

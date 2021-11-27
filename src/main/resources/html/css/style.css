@@ -42,7 +42,7 @@ h4{
     -webkit-text-fill-adjust: transparent;
     filter: drop-shadow(2px 2px #333)
 }*/
-#contratos{
+#imoveis{
     background-color:white;
     color:gray;
     border-radius:0%;
@@ -51,7 +51,7 @@ h4{
     border-color: black;
     height: 35px;
 }
-#contratos:hover{
+#imoveis:hover{
     border-color: rgb(127, 161, 255);
 }
 #imagem-contrato{
