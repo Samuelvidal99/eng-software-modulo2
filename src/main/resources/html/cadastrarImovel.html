@@ -44,6 +44,7 @@
         </div>
       </nav>
       <br><br><br><br><br><br><br>
+  <div id="div01"></div>
   <div class="container">  
       <div class="justify-content-center align-items-center">
           <div class="d-flex justify-content-center">   <!--<div class="col-12"> -->
@@ -53,28 +54,28 @@
                   </div>
                   <div class="form-group text-center">
                       <p>
-                          <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe uma cidade"/>
+                          <input type="text" id="cidadeField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe uma cidade"/>
                       </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um logradouro"/>
+                        <input type="text" id="logradouroField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um logradouro"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um CEP"/>
+                        <input type="text" id="cepField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um CEP"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do condomínio"/>
+                        <input type="text" id="condominioField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do condomínio"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                       <!--<button class="btn btn-success btn-block btn-lg" Acessar</button>-->
                       <!-- <a class="btn btn-outline-success btn-lg" href="principal.html" role="button">Cadastrar</a> -->
-                      <button onclick="preencherCampos()" type="button" class="btn btn-outline-success btn-lg" >Cadastrar</button>
+                      <button onclick="cadastrarImovel()" type="button" class="btn btn-outline-success btn-lg" >Cadastrar</button>
                   </div>
               </form>
         </div>
@@ -98,6 +99,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- JS do Preloader -->
     <script src="javascript/preloader.js"></script>
+    <script src="javascript/imovel.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     
   </body>
 </html>
