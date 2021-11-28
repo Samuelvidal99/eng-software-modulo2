@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>UFRPE - Eng. Software - Módulo 2</title>
   </head>
-  <body onload="preencherSelect()">
+  <body onload="preencherSelect(); preencherSelectInquilinos()">
     <nav class="navbar position-fixed col-12 m-auto navbar-dark" style="background-image: linear-gradient(-10deg, #90EE90, #2E8B57)">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">DashBoard</a>
@@ -43,49 +43,62 @@
           </div>
         </div>
       </nav>
-      <br><br><br><br><br><br>
+      <br><br><br>
   <div id="div01"></div>
   <div class="container">  
       <div class="justify-content-center align-items-center">
           <div class="d-flex justify-content-center">   <!--<div class="col-12"> -->
               <form class="formlogin" style="width:500px;">
                   <div class="text-center mb-2">
-                      <h2>Alterar Imóvel</h2>
+                      <h2>Vincular Contrato</h2>
                   </div>
                   <div class="form-group text-center">
                     <p >
-                      <!-- <svg xmlns="http://www.w3.org/2000/svg" id="imagem-contrato" width="32" height="32" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
-                        <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                        <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
-                      </svg>   -->
-                      <select class="form-control" id="imoveis" autofocus onchange="preencherCampos()" style="text-align: center;width: 250px;">
-                      </select>
+                      <select class="form-control" id="imoveis" autofocus style="text-align: center;width: 250px;"></select>
+                    </p>
+                </div>
+                <div class="form-group text-center">
+                    <p >
+                        <select class="form-control" id="inquilinos" autofocus style="text-align: center;width: 250px;"></select>
                     </p>
                 </div>
                   <div class="form-group text-center">
                       <p>
-                          <input type="text" id="cidadeField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe uma cidade"/>
+                          <input type="text" id="numContratoField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o número do contrato"/>
                       </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" id="logradouroField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um logradouro"/>
+                        <input type="text" id="valorAluguelField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do aluguel"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" id="cepField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe um CEP"/>
+                        <input type="text" id="contratoEnergiaField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o contrato de energia"/>
                     </p>
                   </div>
                   <div class="form-group text-center">
                     <p>
-                        <input type="text" id="condominioField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o valor do condomínio"/>
+                        <input type="text" id="contratoAguaField" style="text-align:center;height:35px;width: 250px;" placeholder="Informe o contrato de água"/>
                     </p>
                   </div>
+                  <div class="form-group text-center">
+                      <label for="dataInicio" style="color: #2E8B57;margin-right: 170px;">Data Ínicio:</label>
+                    <p>
+                        <input id="dataInicio" type="date" style="text-align:center;height:35px;width: 250px; color: gray;">
+                    </p>
+                  </div>
+                  <div class="form-group text-center">
+                      <label for="dataTermino" style="color: #2E8B57;margin-right: 150px;">Data Termino:</label>
+                    <p>
+                        <input id="dataTermino" type="date" style="text-align:center;height:35px;width: 250px; color: gray;">
+                    </p>
+                  </div>
+                  
                   <div class="form-group text-center">
                       <!--<button class="btn btn-success btn-block btn-lg" Acessar</button>-->
                       <!-- <a class="btn btn-outline-success btn-lg" href="principal.html" role="button">Alterar</a> -->
-                      <button onclick="alterarImovel()" type="button" class="btn btn-outline-success btn-lg" >Alterar</button>
+                      <button onclick="vincularContrato()" type="button" class="btn btn-outline-success btn-lg" >Vincular</button>
                   </div>
               </form>
         </div>
@@ -110,6 +123,7 @@
     <!-- JS do Preloader -->
     <script src="javascript/preloader.js"></script>
     <script src="javascript/imovel.js"></script>
+    <script src="javascript/contrato.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   </body>

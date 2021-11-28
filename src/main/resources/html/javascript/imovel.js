@@ -10,6 +10,7 @@ function alertaError(message) {
     `
     div = document.getElementById("div01")
     $(div).append(alerta)
+    window.scrollTo(0,0)
 }
 
 function preencherCampos() {
@@ -130,5 +131,7 @@ function alterarImovel() {
                 alertaError(data.message)
             }
         })
+    }else {
+        alertaError("Imóvel Inválido")
     }
 }
