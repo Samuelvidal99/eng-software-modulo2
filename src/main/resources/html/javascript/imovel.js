@@ -38,10 +38,8 @@ function preencherCampos() {
     }
 }
 
-// Falta a interação do banco não ter imoveis cadastrados
 function preencherSelect() {
     var select = document.getElementById("imoveis")
-    console.log(select.options)
     fetch("http://localhost:8080/imovel/", {
         method: "GET",
         headers: {
@@ -50,10 +48,16 @@ function preencherSelect() {
     })
     .then((response) => response.json())
     .then((data) => {
-        for(var i = 0; i < data.length; i++) {
-            var option = `<option value="${data[i]["id"]}">${data[i]["logradouro"]}</option>`
-            console.log(data[i]["id"])
-            $(select).append(option)
+        if(data.length == 0) {
+            var aux = "<option>Não existem Imóveis cadastrados no sistema.</option>"
+            $(select).append(aux)
+        }else {
+            var aux = "<option>Selecione um Imóvel</option>"
+            $(select).append(aux)
+            for(var i = 0; i < data.length; i++) {
+                var option = `<option value="${data[i]["id"]}">${data[i]["logradouro"]}</option>`
+                $(select).append(option)
+            }
         }
     })
 }
@@ -72,7 +76,6 @@ function cadastrarImovel() {
 
     var body = JSON.stringify(obj)
 
-    console.log(body)
 
     fetch("http://localhost:8080/imovel/new", {
         method: "POST",
@@ -93,7 +96,6 @@ function cadastrarImovel() {
     })
 }
 
-// ver como pegar o id da option
 function alterarImovel() {
     var cidade = document.getElementById("cidadeField").value
     var logradouro = document.getElementById("logradouroField").value
