@@ -12,6 +12,20 @@ function alertaError(message) {
     window.scrollTo(0, 0)
 }
 
+function alertaSuccess(message) {
+    var alerta = `
+    <div class="alert alert-success alert-dismissible fade show" id="alerta" role="alert">
+      <strong>${message}</strong>
+      <button type="button" class="close" data-dismiss="alert" onfocus aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    `
+    div = document.getElementById("div01")
+    $(div).append(alerta)
+    window.scrollTo(0, 0)
+  }
+
 function preencherSelectInquilinos() {
     var select = document.getElementById("inquilinos")
     fetch("http://localhost:8080/inquilino/", {
@@ -89,6 +103,7 @@ function vincularContrato() {
             .then((data) => {
                 if(data.message == undefined) {
                     console.log("Success: \n", data)
+                    alertaSuccess("Success: Contrato Vinculado.")
                 }else {
                     console.log("Error: ", data.message)
                     alertaError(data.message)

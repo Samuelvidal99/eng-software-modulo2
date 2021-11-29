@@ -13,6 +13,20 @@ function alertaError(message) {
     window.scrollTo(0,0)
 }
 
+function alertaSuccess(message) {
+    var alerta = `
+    <div class="alert alert-success alert-dismissible fade show" id="alerta" role="alert">
+      <strong>${message}</strong>
+      <button type="button" class="close" data-dismiss="alert" onfocus aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    `
+    div = document.getElementById("div01")
+    $(div).append(alerta)
+    window.scrollTo(0, 0)
+  }
+
 function preencherCampos() {
     var imovel = document.getElementById("imoveis").value
 
@@ -89,6 +103,7 @@ function cadastrarImovel() {
     .then((data) => {
         if(data.message == undefined) {
             console.log("Success: \n", data)
+            alertaSuccess("Success: Imóvel Cadastrado.")
         } else {
             var string = data.message.replace('<', '')
             console.log(string.replace('>', ''))
@@ -126,6 +141,7 @@ function alterarImovel() {
         .then((data) => {
             if(data.message == undefined) {
                 console.log("Success: \n", data)
+                alertaSuccess("Success: Imóvel Alterado.")
             } else {
                 console.log(data.message)
                 alertaError(data.message)
