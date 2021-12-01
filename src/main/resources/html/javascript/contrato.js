@@ -89,7 +89,7 @@ function vincularContrato() {
             obj.dataInicio = dataInicio
             obj.dataTermino = dataTermino
             obj.emailContratante = data["email"]
-            obj.pendente = false
+            obj.pendente = true
     
             var body = JSON.stringify(obj)
             fetch("http://localhost:8080/contrato/new", {
