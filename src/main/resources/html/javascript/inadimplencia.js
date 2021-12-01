@@ -44,9 +44,7 @@ function carregarTabela() {
             td1.innerHTML = "Não existem cliente cadastrados ou inadimplentes no sistema."
             $(tr).append(td1)
             $(tableBody).append(tr)
-        }else {
-            console.log(data)
-            
+        }else { 
             for(var i = 0; i < data.length; i++) {
                 var tr = document.createElement("tr")
                 var td1 = document.createElement("td")
