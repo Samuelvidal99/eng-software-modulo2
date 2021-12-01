@@ -24,7 +24,7 @@ function alertaSuccess(message) {
     div = document.getElementById("div01")
     $(div).append(alerta)
     window.scrollTo(0, 0)
-  }
+}
 
 function preencherSelectInquilinos() {
     var select = document.getElementById("inquilinos")
