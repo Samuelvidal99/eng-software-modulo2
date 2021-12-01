@@ -68,7 +68,7 @@ function vincularContrato() {
         var dataInicio = document.getElementById("dataInicio").value
         var dataTermino = document.getElementById("dataTermino").value
 
-        console.log(dataInicio)
+        console.log(typeof dataInicio)
         console.log(dataTermino)
 
         fetch(url, {
