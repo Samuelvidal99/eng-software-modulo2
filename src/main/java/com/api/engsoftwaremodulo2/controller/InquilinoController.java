@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.engsoftwaremodulo2.exception.ConstraintException;
-import com.api.engsoftwaremodulo2.exception.ObjectNotFoundException;
 import com.api.engsoftwaremodulo2.model.Inquilino;
 import com.api.engsoftwaremodulo2.service.InquilinoService;
 
