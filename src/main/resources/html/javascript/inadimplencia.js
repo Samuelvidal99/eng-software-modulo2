@@ -64,3 +64,13 @@ function carregarTabela() {
         }
     })
 }
+
+function enviarEmail() {
+    fetch("http://localhost:8080/email/send-email", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => alertaSuccess("E-mail enviado."))
+}
